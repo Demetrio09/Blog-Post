@@ -1,20 +1,36 @@
 import React from "react";
-import Form from "./components/Form";
-import List from "./components/List";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ArticlePage from "./pages/ArticlePage";
+import ArticlesList from "./pages/ArticlesList";
+import NoMatch from "./pages/NoMatch";
 import "./App.css";
-import { TodoProvider } from "./utils/GlobalState";
 
-function TodoList() {
+function App() {
   return (
-    <TodoProvider>
-      <div className='container text-center'>
-        <h1>Create a Todo List!</h1>
-        <Form />
-        <h4>My Todo List:</h4>
-        <List />
+    <Router>
+      <div className='App'>
+        <Switch>
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
+          <Route path='/about'>
+            <AboutPage />
+          </Route>
+          <Route path='/article'>
+            <ArticlePage />
+          </Route>
+          <Route path='/articles-list'>
+            <ArticlesList />
+          </Route>
+          <Route path='*'>
+            <NoMatch />
+          </Route>
+        </Switch>
       </div>
-    </TodoProvider>
+    </Router>
   );
 }
 
-export default TodoList;
+export default App;
