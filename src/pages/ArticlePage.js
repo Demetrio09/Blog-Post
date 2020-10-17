@@ -1,9 +1,20 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import articleContent from "./article-content";
 
 const ArticlePage = () => {
+  const { name } = useParams();
+
+  const article = articleContent.find((article) => article.name === name);
+
+  if (!article) return <h1>Article does not exist!</h1>;
+
   return (
     <div>
-      <h1>This is an article</h1>
+      <h1>{article.title}</h1>
+      {article.content.map((paragrapah, key) => (
+        <p key={key}>{paragrapah}</p>
+      ))}
     </div>
   );
 };
