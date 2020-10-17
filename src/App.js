@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import ArticlesListPage from "./pages/ArticlesListPage";
-import NoMatch from "./pages/NoMatch";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 import NavBar from "./components/NavBar";
 
@@ -28,7 +28,7 @@ function App() {
               <ArticlesListPage />
             </Route>
             <Route path='*'>
-              <NoMatch />
+              <NotFoundPage />
             </Route>
           </Switch>
         </div>

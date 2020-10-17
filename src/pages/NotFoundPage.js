@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-const NoMatch = () => (
+const NotFoundPage = () => (
   <Fragment>
     <h1>Page not found. 404 :-(</h1>
   </Fragment>
 );
 
-export default NoMatch;
+export default NotFoundPage;
