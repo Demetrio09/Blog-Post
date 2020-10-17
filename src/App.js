@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
-import ArticlesList from "./pages/ArticlesList";
+import ArticlesListPage from "./pages/ArticlesListPage";
 import NoMatch from "./pages/NoMatch";
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -25,7 +25,7 @@ function App() {
               <ArticlePage />
             </Route>
             <Route path='/articles-list'>
-              <ArticlesList />
+              <ArticlesListPage />
             </Route>
             <Route path='*'>
               <NoMatch />
