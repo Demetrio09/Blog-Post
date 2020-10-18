@@ -5,8 +5,8 @@ import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import ArticlesListPage from "./pages/ArticlesListPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import "./App.css";
 import NavBar from "./components/NavBar";
+import "./App.css";
 
 function App() {
   return (
