@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import articleContent from "./article-content";
+import articleContent from "./articles-content";
 import ArticleList from "../components/ArticlesList";
 import NotFoundPage from "./NotFoundPage";
 
