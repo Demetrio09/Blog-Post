@@ -1,10 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb");
+const path = require("path");
 
 const app = express();
 
 const PORT = 8000;
+
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.use(bodyParser.json());
 
@@ -12,6 +15,7 @@ const withDB = async (operations, res) => {
   try {
     const client = await MongoClient.connect("mongodb://localhost:27017", {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
 
     const db = client.db("test");
@@ -83,6 +87,10 @@ app.post("/api/articles/:name/add-comment", (req, res) => {
 
     res.status(200).json(updatedArticleInfo);
   }, res);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 app.listen(PORT, () =>
